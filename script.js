@@ -1,21 +1,26 @@
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", createPassword);
+
 var password = "";
-
 var availableCharacters = "";
-
 var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
-
 var numberCharacters = "0123456789";
-
 var specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
-function testFunction() {
+function createPassword() {
   var passwordLength = prompt("Let's make your password! How many characters do you want your password to be? Choose a number between 8 and 128.");
+
+  if (!passwordLength) {
+    return;
+  }
 
   if (passwordLength > 128 || passwordLength < 8) {
     alert("The password needs to be at least 8 characters and no more than 128 characters. Please try again.");
-    testFunction();
+    createPassword();
   }
 
   var upperCase = confirm("Do you want uppercase characters in your password?");
@@ -26,7 +31,7 @@ function testFunction() {
 
   var special = confirm("Do you want special characters in your password?");
 
-  if (upperCase === true) {
+    if (upperCase === true) {
     availableCharacters = availableCharacters.concat(uppercaseCharacters);
   } if (lowerCase === true) {
     availableCharacters = availableCharacters.concat(lowercaseCharacters);
@@ -35,8 +40,8 @@ function testFunction() {
   } if (special === true) {
     availableCharacters = availableCharacters.concat(specialCharacters);
   } if (upperCase !== true && lowerCase !== true && numbers !== true && special !== true) {
-    alert("You must choose 'Okay' for as least one option. Please try again.");
-    testFunction();
+    alert("You must choose 'OK' for as least one option. Please try again.");
+    return;
   }
 
   //var index is getting a random value up to the number of items in the availableCharacters string.
@@ -48,17 +53,18 @@ function testFunction() {
   for (i = 0; i < passwordLength; i++) {
   //var password string combines itself randomCharacter's current value
   password = password.concat(randomCharacter);
+
   //random value changes
   index = Math.floor(Math.random() * availableCharacters.length);
   //new random value assigned, then repeat process until there are as many characters as the user selected
   randomCharacter = availableCharacters[index];
   }
 
-  alert("Password is: " + password);
+  document.getElementById("password").innerHTML = password;
 
   console.log(availableCharacters);
 
   availableCharacters = "";
+  passwordLength = 0;
+  password = "";
 }
-
-testFunction();
