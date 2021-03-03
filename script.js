@@ -44,20 +44,16 @@ function createPassword() {
     return;
   }
 
-  //var index is getting a random value up to the number of items in the availableCharacters string.
-  var index = Math.floor(Math.random() * availableCharacters.length);
-
-  //var randomCharacter is picking a value from the array of availableCharacters based on the random number of index.
-  var randomCharacter = availableCharacters[index];
-
   for (i = 0; i < passwordLength; i++) {
-  //var password string combines itself randomCharacter's current value
-  password = password.concat(randomCharacter);
 
-  //random value changes
+  //random value created or changed
   index = Math.floor(Math.random() * availableCharacters.length);
+
   //new random value assigned, then repeat process until there are as many characters as the user selected
   randomCharacter = availableCharacters[index];
+
+  //var password string combines itself randomCharacter's current value
+  password = password.concat(randomCharacter);
   }
 
   document.getElementById("password").innerHTML = password;
