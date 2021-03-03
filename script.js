@@ -1,18 +1,3 @@
-// Assignment Code
-//var generateBtn = document.querySelector//("#generate");
-
-// Write password to the #password input
-//function writePassword() {
-  //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
-
-  //passwordText.value = password;
-
-//}
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
-
 var password = "";
 
 var availableCharacters = "";
@@ -21,21 +6,25 @@ var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 
-var numberCharacters = "1234567890";
+var numberCharacters = "0123456789";
 
 var specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
-function generatePassword(){
-  
+function testFunction() {
   var passwordLength = prompt("Let's make your password! How many characters do you want your password to be? Choose a number between 8 and 128.");
+
+  if (passwordLength > 128 || passwordLength < 8) {
+    alert("The password needs to be at least 8 characters and no more than 128 characters. Please try again.");
+    testFunction();
+  }
 
   var upperCase = confirm("Do you want uppercase characters in your password?");
 
   var lowerCase = confirm("Do you want lowercase characters in your password?");
 
-  var numbers = confirm("Do you want numbers in your password?")
+  var numbers = confirm("Do you want numbers in your password?");
 
-  var special = confirm("Do you want special characters in your password?")
+  var special = confirm("Do you want special characters in your password?");
 
   if (upperCase === true) {
     availableCharacters = availableCharacters.concat(uppercaseCharacters);
@@ -45,17 +34,31 @@ function generatePassword(){
     availableCharacters = availableCharacters.concat(numberCharacters);
   } if (special === true) {
     availableCharacters = availableCharacters.concat(specialCharacters);
+  } if (upperCase !== true && lowerCase !== true && numbers !== true && special !== true) {
+    alert("You must choose 'Okay' for as least one option. Please try again.");
+    testFunction();
   }
 
-  for (var i = 0; i < length; i++) {
-    password += availableCharacters.charAt(Math.floor(Math.random() * passwordLength));
-  } return password;
+  //var index is getting a random value up to the number of items in the availableCharacters string.
+  var index = Math.floor(Math.random() * availableCharacters.length);
 
+  //var randomCharacter is picking a value from the array of availableCharacters based on the random number of index.
+  var randomCharacter = availableCharacters[index];
 
-   
+  for (i = 0; i < passwordLength; i++) {
+  //var password string combines itself randomCharacter's current value
+  password = password.concat(randomCharacter);
+  //random value changes
+  index = Math.floor(Math.random() * availableCharacters.length);
+  //new random value assigned, then repeat process until there are as many characters as the user selected
+  randomCharacter = availableCharacters[index];
   }
 
-  generatePassword();
+  alert("Password is: " + password);
 
-  console.log(generatePassword(passwordLength));
+  console.log(availableCharacters);
 
+  availableCharacters = "";
+}
+
+testFunction();
