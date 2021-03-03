@@ -49,10 +49,10 @@ function createPassword() {
   //random value created or changed
   index = Math.floor(Math.random() * availableCharacters.length);
 
-  //new random value assigned, then repeat process until there are as many characters as the user selected
+  //new random value assigned
   randomCharacter = availableCharacters[index];
 
-  //var password string combines itself randomCharacter's current value
+  //var password string combines itself randomCharacter's current value, then repeat process until there are as many characters as the user selected
   password = password.concat(randomCharacter);
   }
 
