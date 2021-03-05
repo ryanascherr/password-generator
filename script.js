@@ -20,7 +20,7 @@ function createPassword() {
 
   if (passwordLength > 128 || passwordLength < 8) {
     alert("The password needs to be at least 8 characters and no more than 128 characters. Please try again.");
-    createPassword();
+    return;
   }
 
   var upperCase = confirm("Do you want uppercase characters in your password?");
