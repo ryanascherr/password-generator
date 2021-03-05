@@ -16,7 +16,7 @@ In addition, if the length they select is too short or too long, or if they decl
 
 After a password is created, it will appear in the text box in the middle of the page, where the user can easily copy the password to their clipboard.
 
-![Password Generator](assets/img/password-generator-pic.jpg)
+!(assets/img/password-generator-pic.jpg)
 
 ## Features
 
