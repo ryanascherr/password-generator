@@ -2,7 +2,7 @@
 
 ## Description
 
-With this page, users can create a random password using a set of four parameters. As longer passwords and passwords with a variety of different characters are more secure and less likely to be guessed, I wanted users to be able to easily create such passwords with only a few prompts.
+With this page, users can create a random password using a set of five parameters. As longer passwords and passwords with a variety of different characters are more secure and less likely to be guessed, I wanted users to be able to easily create such passwords with only a few prompts.
 
 ## Installation
 
