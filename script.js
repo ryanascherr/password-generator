@@ -32,13 +32,13 @@ function createPassword() {
   var special = confirm("Do you want special characters in your password?");
 
     if (upperCase === true) {
-    availableCharacters = availableCharacters.concat(uppercaseCharacters);
+    availableCharacters += uppercaseCharacters;
   } if (lowerCase === true) {
-    availableCharacters = availableCharacters.concat(lowercaseCharacters);
+    availableCharacters += lowercaseCharacters;
   } if (numbers === true) {
-    availableCharacters = availableCharacters.concat(numberCharacters);
+    availableCharacters += numberCharacters;
   } if (special === true) {
-    availableCharacters = availableCharacters.concat(specialCharacters);
+    availableCharacters += specialCharacters;
   } if (upperCase !== true && lowerCase !== true && numbers !== true && special !== true) {
     alert("You must choose 'OK' for as least one option. Please try again.");
     return;
@@ -58,6 +58,7 @@ function createPassword() {
 
   document.getElementById("password").innerHTML = password;
 
+  //this is to check to make sure the variable has the appropriate available characters
   console.log(availableCharacters);
 
   //reset all variables
