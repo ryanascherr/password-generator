@@ -12,15 +12,27 @@
       <header>
         <h1>Password Generator</h1>
       </header>
-      <div class="flex-row center">
-        <input type="checkbox" id="uppercase" name="uppercase" value="">
-        <label for="uppercase">Uppercase Characters</label><br>
-        <input type="checkbox" id="lowercase" name="lowercase" value="">
-        <label for="lowercase">Lowercase Characters</label><br>
-        <input type="checkbox" id="numbers" name="numbers" value="">
-        <label for="number">Numbers</label><br>
-        <input type="checkbox" id="special" name="special" value="">
-        <label for="special">Special Characters</label><br>
+      <div class="flex-row center length-container">
+        <label for="length">Enter a number between 8 and 128: </label>
+        <input type="text" name="length" id="length">
+      </div>
+      <div class="flex-row space-evenly">
+        <div>
+          <input type="checkbox" id="uppercase" name="uppercase" value="">
+          <label for="uppercase">Uppercase Characters</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lowercase" name="lowercase" value="">
+          <label for="lowercase">Lowercase Characters</label>
+        </div>
+        <div>
+          <input type="checkbox" id="numbers" name="numbers" value="">
+          <label for="number">Numbers</label>
+        </div>
+        <div>
+          <input type="checkbox" id="special" name="special" value="">
+          <label for="special">Special Characters</label>
+        </div>
       </div>
       <div class="card">
         <div class="card-header">

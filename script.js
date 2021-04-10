@@ -16,57 +16,35 @@ let numberCharacters = "0123456789";
 let specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 function createPassword() {
-  let passwordLength = prompt("Let's make your password! How many characters do you want your password to be? Choose a number between 8 and 128.");
+  // let passwordLength = prompt("Let's make your password! How many characters do you want your password to be? Choose a number between 8 and 128.");
 
-  if (!passwordLength) {
-    return;
-  }
+  let passwordLength = parseInt($("#length").val().trim());
 
   if (passwordLength > 128 || passwordLength < 8) {
-    return alert("The password needs to be at least 8 characters and no more than 128 characters. Please try again.");
-  }
-
-  if (uppercaseCheckbox[0].checked) {
-    availableCharacters += uppercaseCharacters;
-  }
-  
-  if (lowercaseCheckbox[0].checked) {
-    availableCharacters += lowercaseCharacters;
-  }
-  
-  if (numberCheckbox[0].checked) {
-    availableCharacters += numberCharacters;
-  }
-  
-  if (specialCheckbox[0].checked) {
-    availableCharacters += specialCharacters;
-  } 
-  
-  if (!uppercaseCheckbox[0].checked && !lowercaseCheckbox[0].checked && !numberCheckbox[0].checked && !specialCheckbox[0].checked) {
-    alert("You must choose 'OK' for as least one option. Please try again.");
+    document.getElementById("password").innerHTML = "Please enter a valid number between 8 and 128";
     return;
+  } else {
+    if (uppercaseCheckbox[0].checked) {
+      availableCharacters += uppercaseCharacters;
+    }
+    
+    if (lowercaseCheckbox[0].checked) {
+      availableCharacters += lowercaseCharacters;
+    }
+    
+    if (numberCheckbox[0].checked) {
+      availableCharacters += numberCharacters;
+    }
+    
+    if (specialCheckbox[0].checked) {
+      availableCharacters += specialCharacters;
+    } 
+    
+    if (!uppercaseCheckbox[0].checked && !lowercaseCheckbox[0].checked && !numberCheckbox[0].checked && !specialCheckbox[0].checked) {
+      document.getElementById("password").innerHTML = "Please choose at least 1 option";
+      return;
+    }
   }
-
-  // let upperCase = confirm("Do you want uppercase characters in your password?");
-
-  // let lowerCase = confirm("Do you want lowercase characters in your password?");
-
-  // let numbers = confirm("Do you want numbers in your password?");
-
-  // let special = confirm("Do you want special characters in your password?");
-
-  //   if (upperCase) {
-  //   availableCharacters += uppercaseCharacters;
-  // } if (lowerCase) {
-  //   availableCharacters += lowercaseCharacters;
-  // } if (numbers) {
-  //   availableCharacters += numberCharacters;
-  // } if (special) {
-  //   availableCharacters += specialCharacters;
-  // } if (!upperCase && !lowerCase && !numbers && !special) {
-  //   alert("You must choose 'OK' for as least one option. Please try again.");
-  //   return;
-  // }
 
   for (i = 0; i < passwordLength; i++) {
 

@@ -37,7 +37,7 @@ header {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
-  margin: 0 auto;
+  margin: 2% auto;
   max-width: 800px;
   padding: 30px 40px;
 }
@@ -118,13 +118,26 @@ button[disabled] {
   overflow: hidden;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
 }
 
-.center{
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.center {
   justify-content: center;
+}
+
+.length-container {
+  margin-bottom: 2%;
+}
+
+#length {
+  margin-left: 10px;
+  width: 50px;
 }
 
 @media (max-width: 690px) {
