@@ -135,9 +135,15 @@ button[disabled] {
   margin-bottom: 2%;
 }
 
+.options-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 #length {
   margin-left: 10px;
   width: 50px;
+  text-align: center;
 }
 
 @media (max-width: 690px) {
