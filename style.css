@@ -156,6 +156,13 @@ button[disabled] {
   #password {
     font-size: 1rem;
   }
+
+  .options-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+  }
 }
 
 @media (max-width: 500px) {
