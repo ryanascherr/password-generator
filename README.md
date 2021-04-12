@@ -22,6 +22,10 @@ After a password is created, it will appear in the text box in the middle of the
 
 While this simple page has no break points, its simple design will display nicely across almost any screen size.
 
+## Technologies Used
+
+HTML, CSS, JS, JQuery
+
 ## Credits
 
 Jeff DeRosalia, Dan Rosenbaum
@@ -29,3 +33,7 @@ Jeff DeRosalia, Dan Rosenbaum
 ## Link
 
 https://ryanascherr.github.io/password-generator/
+
+## Contact Information
+
+ryanascherr@gmail.com
